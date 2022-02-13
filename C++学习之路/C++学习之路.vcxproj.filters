@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\自定义变量.cpp">
+    <ClCompile Include="..\code\输入.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
