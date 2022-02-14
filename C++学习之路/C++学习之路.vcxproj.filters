@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\输入.cpp">
+    <ClCompile Include="..\code\函数sqrt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
