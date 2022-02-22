@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-int main(void)
-{
+int main(void){
 	int carrots;
 	cout << "How many carrots do you have?" << endl;
 	cin >> carrots;                 //C++ input

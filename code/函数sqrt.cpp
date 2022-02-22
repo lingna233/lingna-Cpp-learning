@@ -4,8 +4,7 @@
 #include <iostream>
 #include <cmath>     // or math.h
 using namespace std;
-int main()
-{
+int main(){
 	double area;
 	cout << "Enter the floor area,in square feet,of your home:";
 	cin >> area;
