@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\用户自定义无返回值函数simon.cpp">
+    <ClCompile Include="..\code\用户自定义有返回值函数stonetolb.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
