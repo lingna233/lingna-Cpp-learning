@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\morechar.cpp">
+    <ClCompile Include="..\code\bondini.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
