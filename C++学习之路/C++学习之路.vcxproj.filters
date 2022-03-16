@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\整型字面值hexoct2.cpp">
+    <ClCompile Include="..\code\morechar.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
