@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\not.cpp">
+    <ClCompile Include="..\code\enum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
