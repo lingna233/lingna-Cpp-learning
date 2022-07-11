@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\enum.cpp">
+    <ClCompile Include="..\code\sumafile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
