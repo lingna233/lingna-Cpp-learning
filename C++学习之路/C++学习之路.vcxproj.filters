@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\strgfun.cpp">
+    <ClCompile Include="..\code\strgback.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
