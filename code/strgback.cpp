@@ -15,9 +15,9 @@ int main() {
 	cout << "Enter an integer: ";
 	cin >> times;
 	char* ps = buildstr(ch, times);
-	cout << ps << endl;
+	//cout << ps << endl;
 	delete[]ps;	// free memory
-	ps = buildstr('+', 20);	// reuse pointer
+ 	ps = buildstr('+', 20);	// reuse pointer
 	cout << ps << "-DONE-" << ps << endl;
 	delete[]ps;	// free memory
 	return 0;
