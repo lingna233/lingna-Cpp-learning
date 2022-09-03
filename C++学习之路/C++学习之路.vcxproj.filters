@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\arrobj.cpp">
+    <ClCompile Include="..\code\arfupt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
