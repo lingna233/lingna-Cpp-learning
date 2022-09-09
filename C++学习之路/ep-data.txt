@@ -1,0 +1,7 @@
+Focal length of objective: 1800 mm
+f.1. eyepiece  magnification
+        30.0             60
+        19.0             95
+        15.0            120
+         5.8            310
+        13.0            138
