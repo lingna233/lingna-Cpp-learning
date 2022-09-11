@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\filefunc.cpp">
+    <ClCompile Include="..\code\leftover.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
