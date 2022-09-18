@@ -15,7 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\newplace.cpp">
+    <ClInclude Include="..\code\namesp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\namesp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\usenmsp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

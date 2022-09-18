@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\newplace.cpp" />
+    <ClInclude Include="..\code\namesp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\namesp.cpp" />
+    <ClCompile Include="..\code\usenmsp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
