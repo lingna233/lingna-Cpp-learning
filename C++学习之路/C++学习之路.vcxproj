@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\code\namesp.h" />
+    <ClInclude Include="..\code\stock00.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\namesp.cpp" />
-    <ClCompile Include="..\code\usenmsp.cpp" />
+    <ClCompile Include="..\code\stock00.cpp" />
+    <ClCompile Include="..\code\usestok0.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
