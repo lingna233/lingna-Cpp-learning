@@ -15,15 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\code\stack.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\code\stack.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\code\stacker.cpp">
+    <ClCompile Include="..\STL\string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
