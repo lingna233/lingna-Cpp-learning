@@ -8,6 +8,8 @@
 */
 #include <iostream>
 #include <vector>
+#include <algorithm>	// STL 算法
+#include <string>
 
 using namespace std;
 
@@ -52,7 +54,7 @@ void StructureAssignment()
 	// 赋值
 	vector<int> v4;
 	// v4 = v1;
-	
+
 	// 区间赋值
 	// v4.assign(v1.begin(), v1.end());
 
@@ -67,7 +69,7 @@ void StructureAssignment()
 }
 
 // veactor 插入数据时的未雨绸缪机制
-void expansion()
+void Expansion()
 {
 	vector<int> v1;
 	cout << "容量：" << v1.capacity() << " 大小：" << v1.size() << endl;
@@ -87,17 +89,207 @@ void expansion()
 			cout << "第" << count << "次开辟空间，容量：" << v1.capacity() << endl;
 			it = v1.begin();
 		}
-
 	}
+}
+
+// vector 大小操作
+void Size()
+{
+	vector<int> v1;
+	if (v1.empty())
+	{
+		cout << "空" << endl;
+	} else
+	{
+		cout << "非空" << endl;
+	}
+
+	vector<int> v2(10, 30);
+	cout << "v2容量：" << v2.capacity() << "，v2大小：" << v2.size() << endl;
+	printVectorInt(v2);
+	// 重置大小
+	// v2.resize(15);	// 过大，默认补0
+	// v2.resize(15, 2);	// 自定义过大时补2
+	v2.resize(5);	// 过小删除多余部分
+	printVectorInt(v2);
+}
+
+// vector 数据存取操作
+void Access()
+{
+	vector<int> v1;
+	v1.push_back(10);
+	v1.push_back(20);
+	v1.push_back(30);
+	v1.push_back(40);
+	v1.push_back(50);	// 10 20 30 40 50
+
+	cout << "头元素：" << v1.front() << "，尾元素：" << v1.back() << endl;
+	// at越界会抛出异常，[]越界不会抛出异常
+	cout << v1[1] << " " << v1.at(1) << endl;
+	v1.at(1) = 200;
+	v1[3] = 400;
+	printVectorInt(v1);	// 10 200 30 400 50
+}
+
+// vector 插入和删除操作
+void InsertDelete()
+{
+	vector<int> v1;
+	v1.push_back(10);
+	v1.push_back(20);
+	v1.push_back(30);
+	v1.push_back(40);
+	v1.push_back(50);
+
+	// 尾部删除
+	v1.pop_back();
+	printVectorInt(v1);	// 10 20 30 40
+	// 插入
+	v1.insert(v1.begin() + 2, 3, 500);
+	printVectorInt(v1);	// 10 20 500 500 500 30 40
+
+	// 区间删除
+	v1.erase(v1.begin() + 2, v1.begin() + 5);
+	printVectorInt(v1);	// 10 20 30 40
+
+	// 清空容器
+	v1.clear();
+	cout << "v1容量：" << v1.capacity() << "，v1大小：" << v1.size() << endl;
+}
+
+// vector swap收缩空间
+void Swap()
+{
+	vector<int> v1;
+	v1.reserve(1000);
+	v1.push_back(10);
+	v1.push_back(20);
+	v1.push_back(30);
+	v1.push_back(40);
+	cout << "v1容量：" << v1.capacity() << "，v1大小：" << v1.size() << endl;	// 1000 4
+	// resize 只能修改大小 不能修改容量
+	// 
+	// 创建一个匿名对象，将v1拷贝给匿名对象，再将v1和匿名对象进行交换
+	// 当v1和匿名对象进行拷贝时，不会拷贝v1的容量，只会拷贝v1的大小
+	// 所以将v1与拷贝后的匿名对象交换后，v1的容量就会收缩
+	vector<int>(v1).swap(v1);
+	cout << "v1容量：" << v1.capacity() << "，v1大小：" << v1.size() << endl;	// 4 4
+}
+
+// vector 案例
+void Case()
+{
+	vector<int> v1(5, 10);
+	vector<int> v2(5, 100);
+	vector<int> v3(5, 1000);
+
+	// 需求：定义一个 vector 容器存放 v1,v2,v3
+	vector<vector<int>> v;
+	v.push_back(v1);
+	v.push_back(v2);
+	v.push_back(v3);
+
+	// 遍历
+	vector<vector<int>>::iterator it = v.begin();	// 定义迭代器
+	for (; it != v.end(); it++)
+	{
+		// *it == vector<int> 
+		vector<int>::iterator mit = (*it).begin();
+		for (; mit != (*it).end(); mit++)
+		{
+			cout << *mit << " ";
+		}
+		cout << endl;
+	}
+}
+
+// 使用 STL 算法对 vector 容器排序
+void Sort()
+{
+	vector<int> v1;
+	v1.push_back(40);
+	v1.push_back(20);
+	v1.push_back(10);
+	v1.push_back(30);
+	v1.push_back(60);
+	v1.push_back(50);
+	printVectorInt(v1);
+
+	// 排序算法
+	sort(v1.begin(), v1.end());
+	printVectorInt(v1);
+}
+
+// vector 存放自定义数据
+// 自定义类
+class Person
+{
+	// 自定义遍历
+	friend void printVectorPerson(vector<Person> &v);
+	// 自定义比较规则
+	friend bool comparePerson(Person &p1, Person &p2);
+public:
+	Person()
+	{};
+	Person(int num, string name, float score)
+	{
+		this->num = num;
+		this->name = name;
+		this->score = score;
+	}	
+	~Person()
+	{};
+
+private:
+	int num;
+	string name;
+	float score;
+};
+
+// 自定义遍历
+void printVectorPerson(vector<Person> &v)
+{
+	vector<Person>::iterator it = v.begin();
+	for (; it != v.end(); it++)
+	{
+		// *it == Preson
+		cout << (*it).num << "  " << (*it).name << "  " << (*it).score << endl;
+	}
+}
+
+// 自定义比较规则
+bool comparePerson(Person &p1, Person &p2)
+{
+	return p1.num < p2.num;
+}
+
+void Custom()
+{
+	vector<Person> v1;
+	v1.push_back(Person(105, "lucy", 67.7f));
+	v1.push_back(Person(103, "bob", 77.7f));
+	v1.push_back(Person(101, "tom", 87.7f));
+	v1.push_back(Person(104, "德玛", 97.7f));
+	v1.push_back(Person(102, "小法", 57.7f));
+	printVectorPerson(v1);
+
+	// 对自定义类型的 vector 排序，需要指定排序规则
+	sort(v1.begin(), v1.end(),comparePerson);
+	printVectorPerson(v1);
 
 }
 
-
-
 int main()
 {
-	StructureAssignment();
-	// expansion();
-
+	// StructureAssignment();
+	// Expansion();
+	// Size();
+	// Access();
+	// InsertDelete();
+	// Swap();
+	// Case();
+	// Sort();
+	Custom();
 	return 0;
 }
