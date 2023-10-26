@@ -73,8 +73,9 @@ void Expansion()
 {
 	vector<int> v1;
 	cout << "容量：" << v1.capacity() << " 大小：" << v1.size() << endl;
+	/*v1.push_back(1);*/
 
-	vector<int>::iterator it;
+	vector<int>::iterator it = v1.begin();
 
 	int count = 0;
 
@@ -82,7 +83,7 @@ void Expansion()
 	{
 		v1.push_back(i);
 
-		// 有错误，程序会崩溃
+		// 有错误，程序会崩溃，迭代器不兼容
 		if (it != v1.begin())
 		{
 			count++;
@@ -283,13 +284,13 @@ void Custom()
 int main()
 {
 	// StructureAssignment();
-	// Expansion();
+	Expansion();
 	// Size();
 	// Access();
 	// InsertDelete();
 	// Swap();
 	// Case();
 	// Sort();
-	Custom();
+	// Custom();
 	return 0;
 }
