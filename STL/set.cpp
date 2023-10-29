@@ -102,9 +102,8 @@ void printSetPerson(set<Person, MyGreaterPerson> &s)
 	for (; it != s.end(); it++)
 	{
 		// *it == Person
-		cout << (*it).num << " " << (*it).name << " " << (*it).score << " ";
+		cout << (*it).num << " " << (*it).name << " " << (*it).score << endl;
 	}
-	cout << endl;
 }
 
 void test02()
@@ -120,7 +119,7 @@ void test02()
 
 int main()
 {
-	test01();
+	// test01();
 	test02();
 	return 0;
 }
