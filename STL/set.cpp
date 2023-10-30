@@ -33,7 +33,7 @@ public:
 };
 
 
-// set 容器API
+// set 容器的使用
 void test01()
 {
 	set<int> s1;
@@ -117,9 +117,88 @@ void test02()
 	printSetPerson(s);
 }
 
+// set 容器查找操作
+void Find()
+{
+	set<int> s1;
+	s1.insert(30);
+	s1.insert(20);
+	s1.insert(10);
+	s1.insert(50);	
+	s1.insert(70);
+	printSetInt(s1);
+
+	set<int>::const_iterator ret;
+	ret = s1.find(50);	// 查找键 key 是否存在，若存在，返回该键元素的迭代器，若不存在，返回 set.end();
+	if (ret != s1.end())
+	{
+		cout << "找到的结果为：" << *ret << endl;
+	}
+
+	// 查找键 key 的个数
+	cout << s1.count(50) << endl;	// 由于 set 键值不允许重复，结果只能为1或者0
+
+}
+
+// set 容器上下限
+void UpLowLimit()
+{
+	set<int> s1;
+	s1.insert(30);
+	s1.insert(20);
+	s1.insert(10);
+	s1.insert(50);
+	s1.insert(70);
+
+	set<int>::const_iterator ret;
+	ret = s1.lower_bound(50);	// 返回第一个 key >= 50 的迭代器
+	if (ret != s1.end())
+	{
+		cout << "下限为：" << *ret << endl;
+	}
+	ret = s1.upper_bound(50);	// 返回第一个 key > 50 的迭代器
+	if (ret != s1.end())
+	{
+		cout << "上限为：" << *ret << endl;
+	}
+
+	// 以队组（pair）的方式存储上下限
+	pair<set<int>::const_iterator, set<int>::const_iterator> pa;
+	pa = s1.equal_range(50);	// 返回容器中 key 与 50 相等的上下线的两个迭代器
+	if (pa.first!= s1.end())
+	{
+		cout << "下限为：" << *(pa.first) << endl;
+	}
+	if (pa.second != s1.end())
+	{
+		cout << "上限为：" << *(pa.second) << endl;
+	}
+}
+
+// multiset 用法 （允许键值重复）
+void Multiset()
+{
+	multiset<int> s1;
+	s1.insert(10);
+	s1.insert(30);
+	s1.insert(10);
+	s1.insert(70);
+	s1.insert(10);
+
+	multiset<int>::const_iterator it = s1.begin();
+	for (; it != s1.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
 int main()
 {
 	// test01();
-	test02();
+	// test02();
+	// Find();
+	// UpLowLimit();
+	Multiset();
 	return 0;
 }
