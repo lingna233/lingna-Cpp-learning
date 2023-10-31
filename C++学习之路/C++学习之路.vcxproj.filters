@@ -18,5 +18,8 @@
     <ClCompile Include="..\STL\map.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\STL\stack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
